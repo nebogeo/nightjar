@@ -22,8 +22,12 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
     def __unicode__(self):
         return self.name;
+    class Meta:
+        verbose_name_plural = "Categories"
 
 # categories assigned to posts (multiple per post)
 class PostCategory(models.Model):
     post = models.ForeignKey(Post)
     category = models.ForeignKey(Category)
+    class Meta:
+        verbose_name_plural = "Post Categories"

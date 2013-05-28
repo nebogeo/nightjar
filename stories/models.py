@@ -8,8 +8,12 @@ class Story(models.Model):
     desc = models.TextField()
     desc_image = models.ImageField(upload_to="story_images")
     button_image = models.ImageField(upload_to="story_images")
+
     def __unicode__(self):
         return self.title;
+
+    class Meta:
+        verbose_name_plural = "Stories"
 
 # multiple images per story
 class StoryImage(models.Model):
