@@ -1,10 +1,7 @@
 {% extends "base.html" %}
 
 {% block article-text %}
-<p><img src="{{ story.desc_image.url }}" align="right">{{ story.desc }}</p>
-{% endblock %}
-
-{% block article-image %}
+<p><img src="{{ story.desc_image.url }}" class="article-image">{{ story.desc }}</p>
 {% endblock %}
 
 {% block buttons %}

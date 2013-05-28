@@ -284,11 +284,18 @@ input[type="checkbox"]:focus {
 }
 
 .article-text {
-  float: left;
+  color: #fff;
 }
 
 .article-image {
-  float: right;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.buttons {
+  margin-left: 2em;
 }
 
 .button a {
@@ -315,7 +322,6 @@ input[type="checkbox"]:focus {
 header {
   padding-top: 2em;
   padding-bottom: 1em;
-  margin-bottom: 3em;
   background: #888;
 }
 header h1 {

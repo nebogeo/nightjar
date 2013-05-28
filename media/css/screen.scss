@@ -75,9 +75,9 @@ a {
 // ---- nightjar stuff ---------------------------------------
 
 .story { margin-bottom: 2em; }
-.article-text { float:left; }
-.article-image { float:right; }
-.buttons { }
+.article-text { color: #fff; }
+.article-image { position: absolute; width: 100%; height: auto; z-index: -1; }
+.buttons { margin-left: 2em; }
 .button a {
     float:left;
     width: 15em;
@@ -110,7 +110,7 @@ a {
 header {
 	@include padding-leader(4);
 	@include padding-trailer(2);
-	@include trailer(6);
+//	@include trailer(6);
 	background: #888;
 	h1 { color: #fff; }
 }
