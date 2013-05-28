@@ -1,0 +1,14 @@
+<h1><a href="/">{{ story.title }}</a></h1>
+
+<img src="{{ story.desc_image.url }}"></a><br/>
+
+<p>{{ story.desc }}</p>
+
+{% for button in buttons %}
+    <p>
+    <a href="/story/{{ button.id_name }}">
+      <img src="{{ button.button_image.url }}"><br/>
+      {{ button.title }}
+    </a>
+    </p>
+{% endfor %}
