@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1><a href="/">{{ story.title }}</a></h1>
 
 <img src="{{ story.desc_image.url }}"></a><br/>
@@ -12,3 +16,5 @@
     </a>
     </p>
 {% endfor %}
+
+{% endblock %}
