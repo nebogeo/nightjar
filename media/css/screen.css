@@ -97,12 +97,12 @@ html {
 }
 
 body {
-  color: #666666;
+  color: black;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #666666;
+  color: black;
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -111,9 +111,10 @@ a {
   white-space: -moz-pre-wrap;
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
+  text-decoration: none;
 }
 a:hover, a:focus, a:active {
-  color: #222222;
+  color: #888888;
 }
 
 h1 {
@@ -278,6 +279,31 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
+.story {
+  margin-bottom: 2em;
+}
+
+.article-text {
+  float: left;
+}
+
+.article-image {
+  float: right;
+}
+
+.button a {
+  float: left;
+  width: 15em;
+  height: 5em;
+  font-size: 200%;
+  color: #fff;
+}
+
+.button-image {
+  position: absolute;
+  z-index: -1;
+}
+
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
 .container {
@@ -290,7 +316,7 @@ header {
   padding-top: 2em;
   padding-bottom: 1em;
   margin-bottom: 3em;
-  background: #333;
+  background: #888;
 }
 header h1 {
   color: #fff;

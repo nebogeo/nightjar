@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block article-text %}
+<p><img src="{{ story.desc_image.url }}" align="right">{{ story.desc }}</p>
+{% endblock %}
 
-<img src="{{ story.desc_image.url }}"></a><br/>
+{% block article-image %}
+{% endblock %}
 
-<p>{{ story.desc }}</p>
+{% block buttons %}
 
 {% for button in buttons %}
-    <p>
+    <div class="button">
     <a href="/story/{{ button.id_name }}">
-      <img src="{{ button.button_image.url }}"><br/>
+      <img src="{{ button.button_image.url }}" class="button-image">
       {{ button.title }}
     </a>
-    </p>
+    </div>
 {% endfor %}
+
+{% endblock %}
+
+{% block blog %}
 
 <h2>Nightjar News</h2>
 

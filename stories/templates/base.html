@@ -7,8 +7,21 @@
     <header>
       <h1><a href="/">Project Nightjar</a></h1>
     </header>
-	<section>
-      {% block content %}{% endblock %}
+	<article class="story clearfix">
+      <section class="article-text">
+        {% block article-text %}{% endblock %}
+      </section>
+      <section class="article-image">
+        {% block article-image %}{% endblock %}
+      </section>
+    </article>
+
+	<section class="buttons clearfix">
+        {% block buttons %}{% endblock %}
+    </section>
+
+	<section class="blog clearfix">
+        {% block blog %}{% endblock %}
     </section>
   </body>
 </html>

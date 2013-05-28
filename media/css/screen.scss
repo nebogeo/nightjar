@@ -28,7 +28,6 @@
 @import "libs/mixins";
 
 
-
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 
@@ -37,18 +36,13 @@
 // Use clearfix if you need general clearfixing
 .clearfix 			{ @include clearfix; }
 
-
 // Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
 .pie-clearfix 		{ @include pie-clearfix; }
-
-
 
 // OTHER EXTENDS
 
 // Max width, for images etc... in RWD
 .max-width 			{ max-width: 100%; height: auto; }
-
-
 
 /* ::Base styles Almost exclusively single element selectors */
 /* ------------------------------------------------------------ */
@@ -68,6 +62,7 @@ a {
 	&:hover, &:focus, &:active {
 		color: $action-respond
 	}
+    text-decoration: none;
 }
 
 // Import base typography into the cascade (if required)
@@ -77,6 +72,22 @@ a {
 // Import form styles into the cascade (if required)
 @import "libs/forms";
 
+// ---- nightjar stuff ---------------------------------------
+
+.story { margin-bottom: 2em; }
+.article-text { float:left; }
+.article-image { float:right; }
+.buttons { }
+.button a {
+    float:left;
+    width: 15em;
+    height: 5em;
+    font-size:200%;
+    color: #fff;
+}
+.button-image { position: absolute; z-index: -1; }
+
+.blog { }
 
 
 // -------------------------------------------------------------------------------------------------------
@@ -100,7 +111,7 @@ header {
 	@include padding-leader(4);
 	@include padding-trailer(2);
 	@include trailer(6);
-	background: #333;
+	background: #888;
 	h1 { color: #fff; }
 }
 
