@@ -4,7 +4,11 @@
     <title>{% block title %}Project Nightjar{% endblock %}</title>
   </head>
   <body>
-    <h1><a href="/">Project Nightjar</a></h1>
-	{% block content %}{% endblock %}
+    <header>
+      <h1><a href="/">Project Nightjar</a></h1>
+    </header>
+	<section>
+      {% block content %}{% endblock %}
+    </section>
   </body>
 </html>
