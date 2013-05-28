@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block content %}
-
 <h1><a href="/">{{ story.title }}</a></h1>
 
-<img src="{{ story.desc_image.url }}"></a><br/>
+{% block article-text %}
+<p><img src="{{ story.desc_image.url }}" align="right">{{ story.desc }}</p>
+{% endblock %}
 
-<p>{{ story.desc }}</p>
+{% block buttons %}
 
 {% for button in buttons %}
     <p>
