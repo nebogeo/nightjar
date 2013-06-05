@@ -17,7 +17,9 @@
       <section class="article">
         {% block article-image %}{% endblock %}
         <section class="article-text">
-          {% block article-text %}{% endblock %}
+          <section class="article-text-inner">
+            {% block article-text %}{% endblock %}
+          </section>
         </section>
       </section>
     </article>

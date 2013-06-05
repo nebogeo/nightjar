@@ -309,6 +309,11 @@ header h1 {
   color: #fff;
   width: 50%;
   min-width: 30em;
+  background: url(../images/transparent-dark.png);
+}
+
+.article-text-inner {
+  padding: 1em;
 }
 
 .article-image {

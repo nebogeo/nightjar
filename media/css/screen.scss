@@ -73,8 +73,21 @@ header {
 }
 
 .story { margin-bottom: 2em; }
+
 .article { }
-.article-text { margin:1em; color: #fff; width:50%; min-width:30em; }
+
+.article-text {
+    margin:1em;
+    color: #fff;
+    width:50%;
+    min-width:30em;
+	background: url(../images/transparent-dark.png);
+}
+
+.article-text-inner {
+    padding: 1em;
+}
+
 .article-image {
     position: absolute;
     width: 100%;
