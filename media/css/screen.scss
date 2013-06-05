@@ -111,11 +111,14 @@ header {
     margin-bottom: 1em;
     font-size:200%;
     min-width:200px;
+}
+
+.button-overlay {
+	background: url(../images/transparent-dark.png);
     padding-left: 1em;
 }
 
 .button a {
-	background: url(../images/transparent-dark.png);
     margin: 1em;
     color: #fff;
 }
