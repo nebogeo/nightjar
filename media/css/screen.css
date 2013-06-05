@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -90,15 +91,18 @@ textarea {
   height: auto;
 }
 
-/* ::Base styles Almost exclusively single element selectors */
-/* ------------------------------------------------------------ */
+@font-face {
+  font-family: 'Socialico';
+  src: url("../fonts/Socialico.otf");
+}
+
 html {
   font-size: 100%;
 }
 
 body {
   color: black;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 a {
@@ -279,18 +283,40 @@ input[type="checkbox"]:focus {
   outline-offset: -2px;
 }
 
+header {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  background: url(../images/transparent.png);
+}
+header h1 {
+  color: #fff;
+}
+
+.icons {
+  float: right;
+  font-family: "Socialico";
+  font-size: 300%;
+  padding-right: 1em;
+}
+
 .story {
   margin-bottom: 2em;
 }
 
 .article-text {
+  margin: 1em;
   color: #fff;
+  width: 50%;
+  min-width: 30em;
 }
 
 .article-image {
   position: absolute;
   width: 100%;
+  min-width: 500px;
   height: auto;
+  top: 0;
   z-index: -1;
 }
 
@@ -323,15 +349,6 @@ input[type="checkbox"]:focus {
 }
 
 /* Example styles - you'll most likey want to remove*/
-header {
-  padding-top: 2em;
-  padding-bottom: 1em;
-  background: #888;
-}
-header h1 {
-  color: #fff;
-}
-
 h1 {
   font-weight: 600;
 }

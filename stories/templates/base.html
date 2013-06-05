@@ -5,14 +5,20 @@
   </head>
   <body>
     <header>
-      <h1><a href="/">Project Nightjar</a></h1>
+      <div style="width:50%; float:left;">
+        <h1><a href="/">Project Nightjar</a></h1>
+      </div>
+      <section class="icons">
+        <a href="http://www.flickr.com/photos/project_nightjar/">n</a><a href="https://www.youtube.com/user/ProjectNightjar">x</a><a href="https://twitter.com/ProjectNightjar">l</a><a href="https://www.facebook.com/SensoryEcology">f</a>
+      </section>
+      <div style="clear:both;"></div>
     </header>
 	<article class="story">
-      <section class="article-text">
-        {% block article-text %}{% endblock %}
-      </section>
-      <section class="clearfix">
+      <section class="article">
         {% block article-image %}{% endblock %}
+        <section class="article-text">
+          {% block article-text %}{% endblock %}
+        </section>
       </section>
     </article>
 

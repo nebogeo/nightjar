@@ -1,22 +1,3 @@
-// Table of Contents
-
-// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
-// -------------------------------------------------------------
-
-// ::Imports pre-render
-	//:: Reset
-	//:: Settings
-	//:: Mixins
-// ::Clearfix extends
-// ::Base styles
-
-// ::Layout styles
-// ::Media queries
-// ::State styles
-// ::Debugs
-
-
-
 // ::Imports pre-render. Must be after reset
 // ------------------------------------------------------------
 @import "compass/typography/vertical_rhythm";
@@ -31,8 +12,6 @@
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 
-// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
-
 // Use clearfix if you need general clearfixing
 .clearfix 			{ @include clearfix; }
 
@@ -44,8 +23,13 @@
 // Max width, for images etc... in RWD
 .max-width 			{ max-width: 100%; height: auto; }
 
-/* ::Base styles Almost exclusively single element selectors */
-/* ------------------------------------------------------------ */
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
+@font-face {
+    font-family: 'Socialico';
+    src: url('../fonts/Socialico.otf');
+}
+
 
 html {
 	font-size: 100%;
@@ -53,7 +37,7 @@ html {
 
 body {
 	color: $base-color;
-	font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 a {
@@ -68,15 +52,37 @@ a {
 // Import base typography into the cascade (if required)
 @import "libs/typography";
 
-
 // Import form styles into the cascade (if required)
 @import "libs/forms";
 
 // ---- nightjar stuff ---------------------------------------
 
+header {
+	@include padding-leader(4);
+	@include padding-trailer(2);
+    padding-left: 1em;
+	background: url(../images/transparent.png);
+	h1 { color: #fff; }
+}
+
+.icons {
+    float: right;
+    font-family: "Socialico";
+    font-size: 300%;
+    padding-right: 1em;
+}
+
 .story { margin-bottom: 2em; }
-.article-text { color: #fff; }
-.article-image { position: absolute; width: 100%; height: auto; z-index: -1; }
+.article { }
+.article-text { margin:1em; color: #fff; width:50%; min-width:30em; }
+.article-image {
+    position: absolute;
+    width: 100%;
+    min-width: 500px;
+    height: auto;
+    top: 0;
+    z-index: -1;
+}
 .buttons { margin-left: 2em; }
 .button a {
     float:left;
@@ -107,13 +113,6 @@ a {
 }
 
 /* Example styles - you'll most likey want to remove*/
-header {
-	@include padding-leader(4);
-	@include padding-trailer(2);
-//	@include trailer(6);
-	background: #888;
-	h1 { color: #fff; }
-}
 
 section 				{ @extend .clearfix; }
 h1 						{ font-weight: 600; }

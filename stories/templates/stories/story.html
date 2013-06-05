@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 
-<h1><a href="/">{{ story.title }}</a></h1>
+
+{% block article-image %}
+<img src="{{ story.desc_image.url }}" class="article-image">
+{% endblock %}
+
 
 {% block article-text %}
-<p><img src="{{ story.desc_image.url }}" align="right">{{ story.desc }}</p>
+<h1><a href="/">{{ story.title }}</a></h1>
+<p>{{ story.desc }}</p>
 {% endblock %}
 
 {% block buttons %}
 
 {% for button in buttons %}
-    <p>
+    <div class="button">
     <a href="/story/{{ button.id_name }}">
-      <img src="{{ button.button_image.url }}"><br/>
+      <img src="{{ button.button_image.url }}" class="button-image">
       {{ button.title }}
     </a>
-    </p>
+    </div>
 {% endfor %}
 
 {% endblock %}
