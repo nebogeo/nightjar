@@ -326,20 +326,26 @@ header h1 {
 }
 
 .buttons {
-  margin-left: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  float: left;
+  width: 30%;
+  text-align: left;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+  font-size: 200%;
+  min-width: 200px;
+  padding-left: 1em;
 }
 
 .button a {
-  float: left;
-  width: 15em;
-  height: 5em;
-  font-size: 200%;
+  background: url(../images/transparent-dark.png);
+  margin: 1em;
   color: #fff;
-}
-
-.button-image {
-  position: absolute;
-  z-index: -1;
 }
 
 .blog {

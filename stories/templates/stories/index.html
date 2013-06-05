@@ -11,12 +11,11 @@
 {% block buttons %}
 
 {% for button in buttons %}
-    <div class="button">
-    <a href="/story/{{ button.id_name }}">
-      <img src="{{ button.button_image.url }}" class="button-image">
-      {{ button.title }}
-    </a>
-    </div>
+<div class="button" style="background:url({{ button.button_image.url}});">
+  <a href="/story/{{ button.id_name }}">
+    {{ button.title }}
+  </a>
+</div>
 {% endfor %}
 
 {% endblock %}

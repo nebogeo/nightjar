@@ -12,14 +12,14 @@
 {% endblock %}
 
 {% block buttons %}
-
+<ul>
 {% for button in buttons %}
-    <div class="button">
+    <li style="float:left;">
     <a href="/story/{{ button.id_name }}">
       <img src="{{ button.button_image.url }}" class="button-image">
       {{ button.title }}
     </a>
-    </div>
+    </li>
 {% endfor %}
-
+</ul>
 {% endblock %}
