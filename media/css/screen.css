@@ -102,7 +102,7 @@ html {
 
 body {
   color: black;
-  background: #000;
+  background: url(../images/bg.png);
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -301,13 +301,10 @@ header h1 {
   padding-right: 1em;
 }
 
-.story {
-  margin-bottom: 2em;
-}
-
 .article-text {
   margin: 1em;
   color: #fff;
+  float: left;
   width: 50%;
   min-width: 30em;
   background: url(../images/transparent-dark.png);
@@ -317,13 +314,18 @@ header h1 {
   padding: 1em;
 }
 
+.article-image-container {
+  margin: 1em;
+  float: left;
+  width: 30%;
+  background: url(../images/transparent-dark.png);
+  padding: 1em;
+}
+
 .article-image {
-  position: absolute;
-  width: 100%;
-  min-width: 500px;
   height: auto;
-  top: 0;
-  z-index: -1;
+  width: 100%;
+  min-width: 300px;
 }
 
 .buttons {
@@ -354,6 +356,28 @@ header h1 {
 
 .blog {
   background: #fff;
+}
+
+.gallery {
+  margin: 1em;
+  width: auto;
+}
+
+.gallery-block {
+  display: block;
+  float: left;
+  width: 30%;
+  text-align: left;
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+  min-width: 200px;
+  background: url(../images/transparent-dark.png);
+  padding: 1em;
+  color: #fff;
+}
+
+.gallery-image {
+  width: 100%;
 }
 
 /* ::Layout styles - Layouts hold one or more modules together. */

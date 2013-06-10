@@ -15,17 +15,21 @@
     </header>
 	<article class="story">
       <section class="article">
-        {% block article-image %}{% endblock %}
         <section class="article-text">
           <section class="article-text-inner">
             {% block article-text %}{% endblock %}
           </section>
         </section>
+          {% block article-image %}{% endblock %}
       </section>
     </article>
 
 	<section class="buttons">
         {% block buttons %}{% endblock %}
+    </section>
+
+	<section class="gallery">
+      {% block gallery %}{% endblock %}
     </section>
 
 	<section class="blog clearfix">

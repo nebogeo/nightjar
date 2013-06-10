@@ -11,10 +11,10 @@ urlpatterns = patterns('',
     url(r'^post/(?P<post_id>\d+)', include('blog.urls')),
 
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-                 {'document_root': '/home/dave/code/nightjar/media/'}),
+                 {'document_root': '/home/dave/code/nightjar/nightjar/media/'}),
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-                 {'document_root': '/home/dave/code/nightjar/static/'}),
+                 {'document_root': '/home/dave/code/nightjar/nightjar/static/'}),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

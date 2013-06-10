@@ -2,13 +2,27 @@
 
 
 {% block article-image %}
-<img src="{{ story.desc_image.url }}" class="article-image">
+<div class="article-image-container">
+  <img src="{{ story.desc_image.url }}" class="article-image">
+</div>
 {% endblock %}
-
 
 {% block article-text %}
 <h1>{{ story.title }}</h1>
 <p>{{ story.desc }}</p>
+{% endblock %}
+
+{% block gallery %}
+{% for image in gallery %}
+<div class="gallery-block">
+  <a href="{{ image.image.url }}">
+    <img src="{{ image.image.url }}" class="gallery-image">
+  </a><br/>
+  {% if image.desc %}
+  <div class="gallery-desc">{{ image.desc }}</div>
+  {% endif %}
+</div>
+{% endfor %}
 {% endblock %}
 
 {% block buttons %}
