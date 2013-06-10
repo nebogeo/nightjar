@@ -1,16 +1,41 @@
 {% extends "base.html" %}
 
 {% block article-image %}
-<img src="{{ story.desc_image.url }}" class="article-image">
+<div class="article-image-container">
+  <img src="{{ story.desc_image.url }}" class="article-image">
+</div>
 {% endblock %}
 
 {% block article-text %}
-<p>{{ story.desc }}</p>
+<p>
+  {% autoescape off %}
+  {{ story.desc }}
+  {% endautoescape %}
+</p>
+{% endblock %}
+
+{% block gallery %}
+{% for image in gallery %}
+<div class="gallery-block">
+  <a href="{{ image.image.url }}">
+    <img src="{{ image.image.url }}" class="gallery-image">
+  </a><br/>
+  {% if image.desc %}
+  <div class="gallery-desc">
+    {% autoescape off %}
+    {{ image.desc }}
+    {% endautoescape %}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
 {% endblock %}
 
 {% block buttons %}
 {% for button in buttons %}
-<div class="button" style="background:url({{ button.button_image.url}});">
+<div class="button-block"
+     style="background:url({{ button.button_image.url}});
+            width: {{ button_width }}%;">
   <div class="button-overlay">
     <a href="/story/{{ button.id_name }}">
       {{ button.title }}
@@ -20,8 +45,8 @@
 {% endfor %}
 {% endblock %}
 
-{% block blog %}
 
+{% block blog %}
 <h2>Nightjar News</h2>
 
 {% for post in posts %}
@@ -32,5 +57,4 @@
     {{ post.date }}
     </p>
 {% endfor %}
-
 {% endblock %}

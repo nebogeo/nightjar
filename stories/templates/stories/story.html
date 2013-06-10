@@ -9,7 +9,11 @@
 
 {% block article-text %}
 <h1>{{ story.title }}</h1>
-<p>{{ story.desc }}</p>
+<p>
+  {% autoescape off %}
+  {{ story.desc }}
+  {% endautoescape %}
+</p>
 {% endblock %}
 
 {% block gallery %}
@@ -19,7 +23,11 @@
     <img src="{{ image.image.url }}" class="gallery-image">
   </a><br/>
   {% if image.desc %}
-  <div class="gallery-desc">{{ image.desc }}</div>
+  <div class="gallery-desc">
+    {% autoescape off %}
+    {{ image.desc }}
+    {% endautoescape %}
+  </div>
   {% endif %}
 </div>
 {% endfor %}
@@ -27,7 +35,9 @@
 
 {% block buttons %}
 {% for button in buttons %}
-<div class="button" style="background:url({{ button.button_image.url}});">
+<div class="button-block"
+     style="background:url({{ button.button_image.url}});
+            width: {{ button_width }}%;">
   <div class="button-overlay">
     <a href="/story/{{ button.id_name }}">
       {{ button.title }}

@@ -302,12 +302,13 @@ header h1 {
 }
 
 .article-text {
-  margin: 1em;
-  color: #fff;
+  margin-top: 1em;
+  margin-left: 1em;
   float: left;
   width: 50%;
   min-width: 30em;
-  background: url(../images/transparent-dark.png);
+  min-height: 25em;
+  background: url(../images/transparent.png);
 }
 
 .article-text-inner {
@@ -315,43 +316,42 @@ header h1 {
 }
 
 .article-image-container {
-  margin: 1em;
+  padding-top: 1em;
+  padding-left: 1em;
   float: left;
-  width: 30%;
-  background: url(../images/transparent-dark.png);
-  padding: 1em;
+  width: 48%;
 }
 
 .article-image {
-  height: auto;
-  width: 100%;
-  min-width: 300px;
+  height: 25em;
+  width: auto;
+  min-width: 25em;
 }
 
 .buttons {
+  margin-top: 1em;
   width: 100%;
   text-align: center;
 }
 
-.button {
+.button-block {
   display: block;
   float: left;
   width: 30%;
   text-align: left;
   margin-left: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-size: 200%;
-  min-width: 200px;
+  min-width: 7.25em;
 }
 
 .button-overlay {
-  background: url(../images/transparent-dark.png);
+  background: url(../images/transparent.png);
   padding-left: 1em;
 }
 
-.button a {
+.button-block a {
   margin: 1em;
-  color: #fff;
 }
 
 .blog {
@@ -359,21 +359,19 @@ header h1 {
 }
 
 .gallery {
-  margin: 1em;
-  width: auto;
+  margin-left: 1em;
 }
 
 .gallery-block {
   display: block;
   float: left;
-  width: 30%;
+  width: 31%;
   text-align: left;
-  margin-left: 0.5em;
+  margin-right: 1em;
   margin-bottom: 1em;
-  min-width: 200px;
-  background: url(../images/transparent-dark.png);
+  min-width: 16em;
+  background: url(../images/transparent.png);
   padding: 1em;
-  color: #fff;
 }
 
 .gallery-image {

@@ -26,9 +26,14 @@ def story(request, story):
     buttons = Story.objects.filter(parent_id_name=story)
     gallery = StoryImage.objects.filter(story__id_name=story)
 
+    button_width = 10
+    if len(buttons)>0: button_width=100/len(buttons)
+    button_width -= 2
+
     context = Context({
         'story': s,
         'buttons': buttons,
+        'button_width': button_width,
         'gallery': gallery
     })
     return HttpResponse(template.render(context))

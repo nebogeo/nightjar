@@ -13,19 +13,20 @@
       </section>
       <div style="clear:both;"></div>
     </header>
-	<article class="story">
-      <section class="article">
+
+    <article>
+      <section>
         <section class="article-text">
           <section class="article-text-inner">
             {% block article-text %}{% endblock %}
           </section>
         </section>
-          {% block article-image %}{% endblock %}
+        {% block article-image %}{% endblock %}
       </section>
     </article>
 
 	<section class="buttons">
-        {% block buttons %}{% endblock %}
+      {% block buttons %}{% endblock %}
     </section>
 
 	<section class="gallery">
