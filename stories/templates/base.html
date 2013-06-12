@@ -5,14 +5,24 @@
   </head>
   <body>
     <header>
-      <div style="width:50%; float:left;">
+      <div style="width:30%; float:left;">
         <h1><a href="/">Project Nightjar</a></h1>
       </div>
       <section class="icons">
-        <a href="http://www.flickr.com/photos/project_nightjar/">n</a><a href="https://www.youtube.com/user/ProjectNightjar">x</a><a href="https://twitter.com/ProjectNightjar">l</a><a href="https://www.facebook.com/SensoryEcology">f</a>
+        <a href="http://www.flickr.com/photos/project_nightjar/">n</a>
+        <a href="https://www.youtube.com/user/ProjectNightjar">x</a>
+        <a href="https://twitter.com/ProjectNightjar">l</a>
+        <a href="https://www.facebook.com/SensoryEcology">f</a>
+        <a href=""><img src="../media/images/sensory-ecology.png"></a>
+        <a href=""><img src="../media/images/exeter.png"></a>
+        <a href=""><img src="../media/images/bbsrc.png"></a>
       </section>
       <div style="clear:both;"></div>
     </header>
+
+	<section class="buttons">
+      {% block buttons %}{% endblock %}
+    </section>
 
     <article>
       <section>
@@ -25,10 +35,6 @@
       </section>
     </article>
 
-	<section class="buttons">
-      {% block buttons %}{% endblock %}
-    </section>
-
 	<section class="gallery">
       {% block gallery %}{% endblock %}
     </section>
@@ -36,5 +42,11 @@
 	<section class="blog clearfix">
         {% block blog %}{% endblock %}
     </section>
+
+    <script src="../media/js/jquery-1.8.2.min.js"></script>
+    <script src="../media/js/jquery.event.drag-2.2.js"></script>
+    <script src="../media/js/jquery.timer.js"></script>
+    <script src="../media/js/gallery-slider.js"></script>
+
   </body>
 </html>

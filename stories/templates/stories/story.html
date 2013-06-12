@@ -2,9 +2,22 @@
 
 
 {% block article-image %}
+
+<!--
+-->
+{% if gallery %}
+<div class="gallery-slider">
+  <div class="slider-items">
+    {% for image in gallery %}
+    <img src="{{ image.image.url }}" class="slider-image">
+    {% endfor %}
+  </div>
+</div>
+{% else %}
 <div class="article-image-container">
   <img src="{{ story.desc_image.url }}" class="article-image">
 </div>
+{% endif %}
 {% endblock %}
 
 {% block article-text %}
@@ -16,32 +29,21 @@
 </p>
 {% endblock %}
 
-{% block gallery %}
-{% for image in gallery %}
-<div class="gallery-block">
-  <a href="{{ image.image.url }}">
-    <img src="{{ image.image.url }}" class="gallery-image">
-  </a><br/>
-  {% if image.desc %}
-  <div class="gallery-desc">
-    {% autoescape off %}
-    {{ image.desc }}
-    {% endautoescape %}
-  </div>
-  {% endif %}
-</div>
-{% endfor %}
-{% endblock %}
 
 {% block buttons %}
+<div class="button-block"
+     style="background:url({{ button.button_image.url}});
+            width: {{ button_width }}%;">
+  <div class="button-overlay">
+    <a href="/story/{{ parent.id_name }}"><<</a>
+  </div>
+</div>
 {% for button in buttons %}
 <div class="button-block"
      style="background:url({{ button.button_image.url}});
             width: {{ button_width }}%;">
   <div class="button-overlay">
-    <a href="/story/{{ button.id_name }}">
-      {{ button.title }}
-    </a>
+    <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
   </div>
 </div>
 {% endfor %}

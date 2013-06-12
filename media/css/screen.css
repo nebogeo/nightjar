@@ -296,18 +296,22 @@ header h1 {
 
 .icons {
   float: right;
-  font-family: "Socialico";
-  font-size: 300%;
   padding-right: 1em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+
+.icons a {
+  font-family: "Socialico";
+  font-size: 500%;
 }
 
 .article-text {
-  margin-top: 1em;
   margin-left: 1em;
   float: left;
-  width: 50%;
+  width: 30%;
   min-width: 30em;
-  min-height: 25em;
+  min-height: 30em;
   background: url(../images/transparent.png);
 }
 
@@ -316,7 +320,6 @@ header h1 {
 }
 
 .article-image-container {
-  padding-top: 1em;
   padding-left: 1em;
   float: left;
   width: 48%;
@@ -331,27 +334,26 @@ header h1 {
 .buttons {
   margin-top: 1em;
   width: 100%;
-  text-align: center;
 }
 
 .button-block {
-  display: block;
   float: left;
   width: 30%;
-  text-align: left;
-  margin-left: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: 200%;
   min-width: 7.25em;
+  text-align: left;
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .button-overlay {
   background: url(../images/transparent.png);
   padding-left: 1em;
+  height: 4em;
+  vertical-align: middle;
 }
 
 .button-block a {
-  margin: 1em;
+  font-size: 200%;
 }
 
 .blog {
@@ -376,6 +378,26 @@ header h1 {
 
 .gallery-image {
   width: 100%;
+}
+
+.gallery-slider {
+  padding-left: 1em;
+  overflow: hidden;
+  width: 60%;
+  height: 30em;
+}
+
+.slider-items {
+  position: relative;
+  cursor: move;
+  width: 6000px;
+}
+
+.slider-image {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: auto;
 }
 
 /* ::Layout styles - Layouts hold one or more modules together. */

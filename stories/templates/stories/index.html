@@ -37,14 +37,11 @@
      style="background:url({{ button.button_image.url}});
             width: {{ button_width }}%;">
   <div class="button-overlay">
-    <a href="/story/{{ button.id_name }}">
-      {{ button.title }}
-    </a>
+    <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
   </div>
 </div>
 {% endfor %}
 {% endblock %}
-
 
 {% block blog %}
 <h2>Nightjar News</h2>

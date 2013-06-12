@@ -16,9 +16,18 @@ class Story(models.Model):
         verbose_name_plural = "Stories"
 
 # multiple images per story
-class StoryImage(models.Model):
+class GalleryImage(models.Model):
     story = models.ForeignKey(Story)
-    image = models.ImageField(upload_to="story_images")
+    image = models.ImageField(upload_to="gallery_images")
+    desc = models.TextField(blank=True)
+
+    def __unicode__(self):
+        return self.image.url;
+
+# multiple images per story
+class GalleryVideo(models.Model):
+    story = models.ForeignKey(Story)
+    embed = models.TextField()
     desc = models.TextField(blank=True)
 
     def __unicode__(self):
