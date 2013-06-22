@@ -21,8 +21,21 @@ jQuery(document).ready(function($)
     var last_x=0;
     var auto_scroll=true;
 
-    $(".arrow-left").mouseup(function(event) { auto_scroll=false; scroll_left(); });
-    $(".arrow-right").mouseup(function(event) { auto_scroll=false; scroll_right(); });
+    $(".arrow-left").click(function() { auto_scroll=false; scroll_left(); });
+    $(".arrow-right").click(function() { auto_scroll=false; scroll_right(); });
+
+    $(".arrow-left").hover(function () {
+        $(this).attr("src", "../media/images/arrow-left.png");
+    }, function () {
+        $(this).attr("src", "../media/images/arrow-left-t.png");
+    });
+
+    $(".arrow-right").hover(function () {
+        $(this).attr("src", "../media/images/arrow-right.png");
+    }, function () {
+        $(this).attr("src", "../media/images/arrow-right-t.png");
+    });
+
     $(".arrow-left").hide();
 
     $(".slider-items").children().each(function(t,v) {
@@ -58,13 +71,6 @@ jQuery(document).ready(function($)
 
     var current_image=0;
 
-    $.timer(function () {
-        if (auto_scroll) {
-        }
-    },
-    6000,
-    true);
-
     var scroll_right = function() {
         current_image++;
         scroll();
@@ -92,6 +98,12 @@ jQuery(document).ready(function($)
         }
     };
 
-
+    $.timer(function () {
+        if (auto_scroll) {
+            scroll_right();
+        }
+    },
+    6000,
+    true);
 
 });

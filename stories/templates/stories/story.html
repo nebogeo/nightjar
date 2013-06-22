@@ -31,13 +31,15 @@
       <img src="{{ image.image.url }}" class="slider-image">
       {% if image.desc %}
       <div class="slider-caption">{{ image.desc }}</div>
+      {% else %}
+      <div class="slider-caption" style="background: none;"> </div>
       {% endif %}
     </div>
     {% endfor %}
   </div>
   <div class="slider-overlay">
-    <a href="#" class="arrow-left"><img src="../media/images/arrow-left.png"></a>
-    <a href="#" class="arrow-right"><img src="../media/images/arrow-right.png" style="float: right; margin-right: 3em;"></a>
+    <img class="arrow-left" src="../media/images/arrow-left-t.png">
+    <img class="arrow-right" src="../media/images/arrow-right-t.png" style="float: right; margin-right: 3em;">
   </div>
 </div>
 {% else %}
