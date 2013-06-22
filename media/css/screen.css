@@ -361,6 +361,16 @@ header h1 {
   background: url(../images/transparent.png);
 }
 
+.blog-left {
+  float: left;
+  width: 40%;
+}
+
+.blog-right {
+  float: right;
+  width: 40%;
+}
+
 .gallery {
   padding-left: 1em;
 }
