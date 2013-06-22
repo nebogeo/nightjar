@@ -1,35 +1,5 @@
 {% extends "base.html" %}
 
-
-{% block article-image %}
-
-<!--
--->
-{% if gallery %}
-<div class="gallery-slider">
-  <div class="slider-items">
-    {% for image in gallery %}
-    <img src="{{ image.image.url }}" class="slider-image">
-    {% endfor %}
-  </div>
-</div>
-{% else %}
-<div class="article-image-container">
-  <img src="{{ story.desc_image.url }}" class="article-image">
-</div>
-{% endif %}
-{% endblock %}
-
-{% block article-text %}
-<h1>{{ story.title }}</h1>
-<p>
-  {% autoescape off %}
-  {{ story.desc }}
-  {% endautoescape %}
-</p>
-{% endblock %}
-
-
 {% block buttons %}
 <div class="button-block"
      style="background:url({{ button.button_image.url}});
@@ -47,4 +17,41 @@
   </div>
 </div>
 {% endfor %}
+{% endblock %}
+
+{% block article-image %}
+
+<!--
+-->
+{% if gallery %}
+<div class="gallery-slider">
+  <div class="slider-items">
+    {% for image in gallery %}
+    <div class="slider-item">
+      <img src="{{ image.image.url }}" class="slider-image">
+      {% if image.desc %}
+      <div class="slider-caption">{{ image.desc }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="slider-overlay">
+    <a href="#" class="arrow-left"><img src="../media/images/arrow-left.png"></a>
+    <a href="#" class="arrow-right"><img src="../media/images/arrow-right.png" style="float: right; margin-right: 3em;"></a>
+  </div>
+</div>
+{% else %}
+<div class="article-image-container">
+  <img src="{{ story.desc_image.url }}" class="article-image">
+</div>
+{% endif %}
+{% endblock %}
+
+{% block article-text %}
+<h1>{{ story.title }}</h1>
+<p>
+  {% autoescape off %}
+  {{ story.desc }}
+  {% endautoescape %}
+</p>
 {% endblock %}

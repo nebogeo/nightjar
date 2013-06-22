@@ -138,19 +138,13 @@ header {
 ////// gallery
 
 .gallery {
-    margin-left: 1em;
+    padding-left: 1em;
 }
 
 .gallery-block {
-    display: block;
-    float: left;
     width: 31%;
-    text-align: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
     min-width: 16em;
 	background: url(../images/transparent.png);
-    padding: 1em;
 }
 
 .gallery-image {
@@ -158,9 +152,8 @@ header {
 }
 
 .gallery-slider {
-    padding-left: 1em;
     overflow: hidden;
-    width: 60%;
+    width: 40em;
     height: 30em;
 }
 
@@ -170,12 +163,47 @@ header {
     width: 6000px;
 }
 
+.slider-item {
+    width: 40em;
+    float: left;
+}
+
+.slider-overlay {
+    position: relative;
+    top: -21.5em;
+    left: 1em;
+    color: #fff;
+}
+
+.slider-caption {
+	@include padding-leader(3);
+	@include padding-trailer(2);
+    padding-left: 1em;
+    position: relative;
+    top: -4em;
+    color: #fff;
+    background: url(../images/transparent-dark.png);
+    z-index: 999;
+}
+
 .slider-image {
-    margin: 0;
-    padding: 0;
     height: 100%;
     width: auto;
 }
+
+// --------------------------------------------------------------
+
+footer {
+	@include padding-leader(2);
+	@include padding-trailer(2);
+    padding-left: 1em;
+    padding-right: 1em;
+    background: url(../images/transparent.png);
+	h1 { color: #fff; }
+    margin: 1em;
+    text-align: right;
+}
+
 
 // -------------------------------------------------------------------------------------------------------
 
