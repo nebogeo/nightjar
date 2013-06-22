@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import Context, loader
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from stories.models import Story
 from stories.models import GalleryImage
@@ -32,7 +32,11 @@ def story(request, story):
     template = loader.get_template('stories/story.html')
     buttons = Story.objects.filter(parent_id_name=story)
     gallery = GalleryImage.objects.filter(story__id_name=story)
-    parent = get_object_or_404(Story, id_name=s.parent_id_name)
+    try:
+        parent = Story.objects.get(id_name=s.parent_id_name)
+    except Story.DoesNotExist:
+        # no parents, must be index
+        return redirect("/");
 
     context = Context({
         'story': s,
