@@ -320,13 +320,12 @@ header h1 {
 }
 
 .article-image-container {
-  padding-left: 1em;
   float: left;
   width: 48%;
 }
 
 .article-image {
-  height: 25em;
+  height: 30em;
   width: auto;
   min-width: 25em;
 }
@@ -357,6 +356,8 @@ header h1 {
 }
 
 .blog {
+  margin: 1em;
+  padding: 1em;
   background: #fff;
 }
 

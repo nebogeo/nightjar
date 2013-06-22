@@ -6,9 +6,9 @@ from stories.models import Story
 from stories.models import GalleryImage
 from blog.models import Post
 
-def get_button_width(buttons):
+def get_button_width(buttons,add):
     button_width = 100
-    if len(buttons)>0: button_width=100/(len(buttons)+1)
+    if len(buttons)>0: button_width=100/(len(buttons)+add)
     button_width -= 2
     return button_width
 
@@ -21,7 +21,7 @@ def index(request):
     context = Context({
         'story': s,
         'buttons': buttons,
-        'button_width': get_button_width(buttons),
+        'button_width': get_button_width(buttons,0),
         'posts': posts
     })
     return HttpResponse(template.render(context))
@@ -37,7 +37,7 @@ def story(request, story):
     context = Context({
         'story': s,
         'buttons': buttons,
-        'button_width': get_button_width(buttons),
+        'button_width': get_button_width(buttons,1),
         'gallery': gallery,
         'parent': parent
     })

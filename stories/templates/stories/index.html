@@ -1,36 +1,5 @@
 {% extends "base.html" %}
 
-{% block article-image %}
-<div class="article-image-container">
-  <img src="{{ story.desc_image.url }}" class="article-image">
-</div>
-{% endblock %}
-
-{% block article-text %}
-<p>
-  {% autoescape off %}
-  {{ story.desc }}
-  {% endautoescape %}
-</p>
-{% endblock %}
-
-{% block gallery %}
-{% for image in gallery %}
-<div class="gallery-block">
-  <a href="{{ image.image.url }}">
-    <img src="{{ image.image.url }}" class="gallery-image">
-  </a><br/>
-  {% if image.desc %}
-  <div class="gallery-desc">
-    {% autoescape off %}
-    {{ image.desc }}
-    {% endautoescape %}
-  </div>
-  {% endif %}
-</div>
-{% endfor %}
-{% endblock %}
-
 {% block buttons %}
 {% for button in buttons %}
 <div class="button-block"
@@ -43,15 +12,53 @@
 {% endfor %}
 {% endblock %}
 
-{% block blog %}
-<h2>Nightjar News</h2>
+{% block article-image %}
 
-{% for post in posts %}
-    <p>
+<!--
+-->
+{% if gallery %}
+<div class="gallery-slider">
+  <div class="slider-items">
+    {% for image in gallery %}
+    <div class="slider-item">
+      <img src="{{ image.image.url }}" class="slider-image">
+      {% if image.desc %}
+      <div class="slider-caption">{{ image.desc }}</div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="slider-overlay">
+    <a href="#" class="arrow-left"><img src="../media/images/arrow-left.png"></a>
+    <a href="#" class="arrow-right"><img src="../media/images/arrow-right.png" style="float: right; margin-right: 3em;"></a>
+  </div>
+</div>
+{% else %}
+<div class="article-image-container">
+  <img src="{{ story.desc_image.url }}" class="article-image">
+</div>
+{% endif %}
+{% endblock %}
+
+{% block article-text %}
+<p>
+  {% autoescape off %}
+  {{ story.desc }}
+  {% endautoescape %}
+</p>
+{% endblock %}
+
+{% block blog %}
+<section class="blog clearfix">
+  <h2>Nightjar News</h2>
+
+  {% for post in posts %}
+  <p>
     <a href="/post/{{ post.pk }}">
       {{ post.title }}
     </a> by {{ post.author }} <br/>
     {{ post.date }}
-    </p>
-{% endfor %}
+  </p>
+  {% endfor %}
+</section>
 {% endblock %}
