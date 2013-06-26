@@ -39,6 +39,10 @@ def story(request, story):
     s = get_object_or_404(Story, id_name=story)
     template = loader.get_template('stories/story.html')
     buttons = Story.objects.filter(parent_id_name=story)
+    # if no buttons, display buttons on the same level
+    if len(buttons)==0:
+        buttons = Story.objects.filter(parent_id_name=s.parent_id_name)
+
     gallery = GalleryImage.objects.filter(story__id_name=story)
     try:
         parent = Story.objects.get(id_name=s.parent_id_name)
