@@ -24,7 +24,7 @@ def index(request):
         button.colour=button_colours[c];
         button.size=100;
         if len(button.title)>16:
-            button.size=70;
+            button.size=90;
         c=c+1
     context = Context({
         'story': s,
