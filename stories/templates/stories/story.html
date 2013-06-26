@@ -34,7 +34,9 @@
     <div class="slider-item">
       <img src="{{ image.image.url }}" class="slider-image">
       {% if image.desc %}
+      {% autoescape off %}
       <div class="slider-caption">{{ image.desc }}</div>
+      {% endautoescape %}
       {% else %}
       <div class="slider-caption" style="background: none;"> </div>
       {% endif %}

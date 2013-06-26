@@ -23,7 +23,7 @@ def index(request):
     for button in buttons:
         button.colour=button_colours[c];
         button.size=100;
-        if len(button.title)>16:
+        if len(button.title)>11:
             button.size=75;
         c=c+1
     context = Context({
@@ -49,7 +49,7 @@ def story(request, story):
     for button in buttons:
         button.colour=button_colours[c];
         button.size=100;
-        if len(button.title)>16:
+        if len(button.title)>11:
             button.size=75;
         c=c+1
     context = Context({
