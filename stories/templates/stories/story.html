@@ -15,7 +15,9 @@
             opacity: 0.5;
             width: {{ button_width }}%;">
   <div class="button-overlay">
-    <a href="/story/{{ button.id_name }}" style="font-size:{{ button.size }}%;">{{ button.title }}</a>
+    <span style="font-size:{{ button.size }}%;">
+    <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
+    </span>
   </div>
 </div>
 {% endfor %}
