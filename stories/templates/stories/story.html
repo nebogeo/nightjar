@@ -2,7 +2,8 @@
 
 {% block buttons %}
 <div class="button-block"
-     style="background:url({{ button.button_image.url}});
+     style="background:{{ button.colour }};
+            opacity: 0.5;
             width: {{ button_width }}%;">
   <div class="button-overlay">
     <a href="/story/{{ parent.id_name }}"><<</a>
@@ -10,7 +11,8 @@
 </div>
 {% for button in buttons %}
 <div class="button-block"
-     style="background:url({{ button.button_image.url}});
+     style="background:{{ button.colour }};
+            opacity: 0.5;
             width: {{ button_width }}%;">
   <div class="button-overlay">
     <a href="/story/{{ button.id_name }}">{{ button.title }}</a>

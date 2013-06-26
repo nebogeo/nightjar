@@ -7,7 +7,6 @@ class Story(models.Model):
     parent_id_name = models.CharField(max_length=200)
     desc = models.TextField()
     desc_image = models.ImageField(upload_to="story_images")
-    button_image = models.ImageField(upload_to="story_images")
 
     def __unicode__(self):
         return self.id_name;

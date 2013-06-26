@@ -6,6 +6,8 @@ from stories.models import Story
 from stories.models import GalleryImage
 from blog.models import Post
 
+button_colours = ["#ff7777", "#77ff77", "#7777ff", "#00ffff", "#ff00ff"];
+
 def get_button_width(buttons,add):
     button_width = 100
     if len(buttons)>0: button_width=100/(len(buttons)+add)
@@ -17,7 +19,10 @@ def index(request):
     template = loader.get_template('stories/index.html')
     buttons = Story.objects.filter(parent_id_name='main')
     posts = Post.objects.all().order_by('-date')[:5]
-
+    c=0
+    for button in buttons:
+        button.colour=button_colours[c];
+        c=c+1
     context = Context({
         'story': s,
         'buttons': buttons,
@@ -37,6 +42,11 @@ def story(request, story):
     except Story.DoesNotExist:
         # no parents, must be index
         return redirect("/");
+
+    c=0
+    for button in buttons:
+        button.colour=button_colours[c];
+        c=c+1
 
     context = Context({
         'story': s,
