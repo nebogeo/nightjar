@@ -347,8 +347,10 @@ header h1 {
 .button-overlay {
   background: url(../images/transparent.png);
   padding-left: 1em;
-  height: 4em;
-  vertical-align: middle;
+//  height: 4em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+//  vertical-align: middle;
 }
 
 .button-block a {
