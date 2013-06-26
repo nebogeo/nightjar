@@ -21,7 +21,7 @@ class GalleryImage(models.Model):
     desc = models.TextField(blank=True)
 
     def __unicode__(self):
-        return self.image.url;
+        return story.id_name+" "+self.image.url;
 
 # multiple images per story
 class GalleryVideo(models.Model):

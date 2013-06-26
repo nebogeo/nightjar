@@ -22,6 +22,9 @@ def index(request):
     c=0
     for button in buttons:
         button.colour=button_colours[c];
+        button.size=100;
+        if len(button.title)>16:
+            button.size=50;
         c=c+1
     context = Context({
         'story': s,
@@ -42,12 +45,13 @@ def story(request, story):
     except Story.DoesNotExist:
         # no parents, must be index
         return redirect("/");
-
     c=0
     for button in buttons:
         button.colour=button_colours[c];
+        button.size=100;
+        if len(button.title)>16:
+            button.size=50;
         c=c+1
-
     context = Context({
         'story': s,
         'buttons': buttons,
