@@ -14,18 +14,23 @@ def get_button_width(buttons,add):
     button_width -= 2
     return button_width
 
-def index(request):
-    s = get_object_or_404(Story, id_name='main')
-    template = loader.get_template('stories/index.html')
-    buttons = Story.objects.filter(parent_id_name='main')
-    posts = Post.objects.all().order_by('-date')[:5]
+def hack_button_text_size(buttons):
     c=0
     for button in buttons:
         button.colour=button_colours[c];
         button.size=100;
         if len(button.title)>11:
             button.size=75;
+        if len(button.title)>19:
+            button.size=50;
         c=c+1
+
+def index(request):
+    s = get_object_or_404(Story, id_name='main')
+    template = loader.get_template('stories/index.html')
+    buttons = Story.objects.filter(parent_id_name='main')
+    posts = Post.objects.all().order_by('-date')[:5]
+    hack_button_text_size(buttons)
     context = Context({
         'story': s,
         'buttons': buttons,
@@ -49,13 +54,7 @@ def story(request, story):
     except Story.DoesNotExist:
         # no parents, must be index
         return redirect("/");
-    c=0
-    for button in buttons:
-        button.colour=button_colours[c];
-        button.size=100;
-        if len(button.title)>11:
-            button.size=75;
-        c=c+1
+    hack_button_text_size(buttons)
     context = Context({
         'story': s,
         'buttons': buttons,

@@ -347,7 +347,6 @@ header h1 {
 .button-overlay {
   background: url(../images/transparent.png);
   padding-left: 1em;
-  min-height: 80px;
   vertical-align: middle;
   display: inline-block;
   height: 80px;
