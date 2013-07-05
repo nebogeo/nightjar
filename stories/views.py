@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.shortcuts import render, get_object_or_404, redirect
@@ -20,9 +21,9 @@ def hack_button_text_size(buttons):
         button.colour=button_colours[c];
         button.size=100;
         if len(button.title)>12:
-            button.size=75;
+            button.size=80;
         if len(button.title)>16:
-            button.size=50;
+            button.size=60;
         c=c+1
 
 def index(request):
@@ -35,7 +36,8 @@ def index(request):
         'story': s,
         'buttons': buttons,
         'button_width': get_button_width(buttons,0),
-        'posts': posts
+        'posts': posts,
+        'leaf' : False
     })
     return HttpResponse(template.render(context))
 
@@ -45,8 +47,11 @@ def story(request, story):
     template = loader.get_template('stories/story.html')
     buttons = Story.objects.filter(parent_id_name=story)
     # if no buttons, display buttons on the same level
+    leaf=False
     if len(buttons)==0:
-        buttons = Story.objects.filter(parent_id_name=s.parent_id_name)
+        leaf=True
+        buttons = Story.objects.filter(Q(parent_id_name=s.parent_id_name) & ~Q(id_name=s.id_name))
+
 
     gallery = GalleryImage.objects.filter(story__id_name=story)
     try:
@@ -60,6 +65,7 @@ def story(request, story):
         'buttons': buttons,
         'button_width': get_button_width(buttons,1),
         'gallery': gallery,
-        'parent': parent
+        'parent': parent,
+        'leaf': leaf
     })
     return HttpResponse(template.render(context))
