@@ -19,9 +19,9 @@ def hack_button_text_size(buttons):
     for button in buttons:
         button.colour=button_colours[c];
         button.size=100;
-        if len(button.title)>11:
+        if len(button.title)>14:
             button.size=75;
-        if len(button.title)>19:
+        if len(button.title)>17:
             button.size=50;
         c=c+1
 
