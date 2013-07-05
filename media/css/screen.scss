@@ -122,8 +122,12 @@ header {
 .button-overlay {
 	background: url(../images/transparent.png);
     padding-left: 1em;
-    height: 4em;
+    min-height: 80px;
     vertical-align: middle;
+    display:  inline-block;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
 }
 
 .button-block a {
