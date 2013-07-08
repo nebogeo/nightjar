@@ -5,7 +5,7 @@
   </head>
   <body>
     <header>
-      <div style="width:30%; float:left;">
+      <div style="width:30%; float:left; min-width: 12em;">
         <h1><a href="/">Project Nightjar</a></h1>
       </div>
       <section class="icons">
@@ -16,6 +16,8 @@
       </section>
       <div style="clear:both;"></div>
     </header>
+
+    <section class="content">
 
 	<section class="buttons">
       {% block buttons %}{% endblock %}
@@ -35,6 +37,8 @@
     </article>
 
     {% block blog %}{% endblock %}
+
+    </section>
 
     <footer>
 

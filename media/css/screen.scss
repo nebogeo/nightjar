@@ -8,19 +8,8 @@
 @import "libs/settings";
 @import "libs/mixins";
 
-
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
-
-// Use clearfix if you need general clearfixing
 .clearfix 			{ @include clearfix; }
-
-// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
 .pie-clearfix 		{ @include pie-clearfix; }
-
-// OTHER EXTENDS
-
-// Max width, for images etc... in RWD
 .max-width 			{ max-width: 100%; height: auto; }
 
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
@@ -70,11 +59,16 @@ header {
     padding-right: 1em;
     margin-top: -1em;
     margin-bottom: -1em;
+    min-width: 18em;
 }
 
 .icons a {
     font-family: "Socialico";
     font-size: 500%;
+}
+
+.content {
+    padding-right: 1em;
 }
 
 ///////// stories
@@ -83,7 +77,16 @@ header {
     margin-left: 1em;
     float: left;
     width: 30%;
+
     min-width: 30em;
+
+    @media only screen and ( max-width: 800px ) {
+        min-width: 100%;
+        float: none;
+        padding-right: 1em;
+        margin-bottom: 1em;
+    }
+
     min-height: 30em;
 	background: url(../images/transparent.png);
 }
@@ -92,18 +95,20 @@ header {
     padding: 1em;
 }
 
-.article-image-container {
-    float: left;
-    width: 48%;
-}
-
 .article-image {
     height: 30em;
     width: auto;
-    min-width: 25em;
+
+    @media only screen and ( max-width: 800px ) {
+          width: 100%;
+          height: auto;
+    }
+
 }
 
 //////// buttons
+
+$button-width: 35%;
 
 .buttons {
     margin-top: 1em;
@@ -112,26 +117,30 @@ header {
 
 .button-block {
     float: left;
-    width: 30%;
-    min-width: 7.25em;
+    min-width: 5em;
+
+    @media only screen and ( max-width: 800px ) {
+        min-width: 100%;
+    }
+
     text-align: left;
-    margin-left: 1em;
-    margin-bottom: 1em;
-}
-
-.button-overlay {
-	background: url(../images/transparent.png);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
     padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     vertical-align: middle;
-    display:  inline-block;
-    height: 80px;
-    line-height: 80px;
     width: 100%;
+    background: #fff;
 }
 
-.button-block a {
-    font-size: 200%;
+.highlight {
+    border: solid #000 2px;
+    font-weight: bold;
+    background: #fff;
 }
+
+
 
 /////// blog
 
@@ -177,6 +186,11 @@ header {
     overflow: hidden;
     width: 40em;
     height: 30em;
+
+    @media only screen and ( max-width: 800px ) {
+          width: 100%;
+    }
+
 }
 
 .slider-items {
@@ -188,6 +202,11 @@ header {
 .slider-item {
     width: 40em;
     float: left;
+
+    @media only screen and ( max-width: 800px ) {
+          width: 800px;
+          height: auto;
+    }
 }
 
 .slider-overlay {
@@ -211,6 +230,11 @@ header {
 .slider-image {
     height: 100%;
     width: auto;
+
+    @media only screen and ( max-width: 800px ) {
+          width: 90%;
+          height: auto;
+    }
 }
 
 // --------------------------------------------------------------
@@ -222,7 +246,7 @@ footer {
     padding-right: 1em;
     background: url(../images/transparent.png);
 	h1 { color: #fff; }
-    margin: 1em;
+    margin-top: 1em;
     text-align: right;
 }
 
@@ -252,35 +276,6 @@ ul 						{ @include unordered-inside }
 
 
 
-/* ::Media queries */
-/* ------------------------------------------------------------ */
-
-// If using gridset or another pre-defined grid, these should match up to the same breakpoints
-
-// Below examples use a mobile-first approach
-
-
-// Eg for 480px
-@media screen and (min-width: em-font(480px)) {
-	.container {
-		width: 95%;
-	}
-}
-
-
-// Eg for 800px
-@media screen and (min-width: em-font(800px)) {
-	.container {
-		min-width: em-font(780px);
-	}
-}
-
-// Eg for 1240px
-@media screen and (min-width: em-font(1240px)) {
-	.container {
-		max-width: em-font(1080px);
-	}
-}
 
 // Print styles
 @media print {
@@ -295,50 +290,4 @@ ul 						{ @include unordered-inside }
 // IOS specifics
 @media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
 	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
-}
-
-
-/* ::State styles */
-/* ------------------------------------------------------------ */
-
-.is-hidden {
-	display: none;
-}
-
-.is-shown, .is-block {
-	display: block;
-}
-
-.is-uppercase {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
-.is-lowercase {
-	text-transform: lowercase;
-}
-
-
-
-/* ::Debugs and #grid by Jon Gibbins */
-/* ----------------------------------------------------------- */
-
-#grid {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#grid div.horiz{
-	// Use this one NOT using a global border-box setting
-	// height: $base-line-height - 1px;
-
-	// Use this one if you ARE using a global border-box setting
-    height: $base-line-height;
-
-    // Carry on...
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-    padding: 0;
 }

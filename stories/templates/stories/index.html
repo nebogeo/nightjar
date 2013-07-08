@@ -4,11 +4,10 @@
 {% for button in buttons %}
 <div class="button-block"
      style="background:{{ button.colour }};
-            opacity: 0.5;
-            width: {{ button_width }}%;">
-  <div class="button-overlay">
+            width: {{ button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ button.image }});">
     <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
-  </div>
 </div>
 {% endfor %}
 {% endblock %}

@@ -1,26 +1,43 @@
 {% extends "base.html" %}
 
 {% block buttons %}
+
 <div class="button-block"
      style="background:{{ button.colour }};
-            opacity: 0.5;
-            width: {{ button_width }}%;">
-  <div class="button-overlay">
-    <a href="/story/{{ parent.id_name }}">{{ parent.title }}</a>
-  </div>
+            width: 3rem;
+            min-width: 3rem;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ back_button }});">
+  <a href="/story/{{ parent.id_name }}"> < </a>
 </div>
-{% for button in buttons %}
+
+
+<!-- display title if not a leaf node -->
+{% if not leaf %}
+<div class="button-block highlight"
+     style="background:{{ button.colour }};
+            width: {{ button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ parent_button }});">
+  <a href="/story/{{ story.id_name }}"> {{ story.title }} </a>
+</div>
+{% else %}
 <div class="button-block"
      style="background:{{ button.colour }};
-            opacity: 0.5;
-            width: {{ button_width }}%;">
-  <div class="button-overlay">
-    <span style="font-size:{{ button.size }}%;
-                 vertical-align: middle;
-                 display: inline-block;">
-    <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
-    </span>
-  </div>
+            width: {{ button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ parent_button }});">
+  <a href="/story/{{ parent.id_name }}"> {{ parent.title }} </a>
+</div>
+{% endif %}
+
+{% for button in buttons %}
+<div class="button-block {% if button.id_name = story.id_name %} highlight {% endif %}"
+     style="background:{{ button.colour }};
+            width: {{ button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ button.image }});">
+  <a href="/story/{{ button.id_name }}"> {{ button.title }} </a>
 </div>
 {% endfor %}
 {% endblock %}
@@ -51,14 +68,12 @@
   </div>
 </div>
 {% else %}
-<div class="article-image-container">
-  <img src="{{ story.desc_image.url }}" class="article-image">
-</div>
+<img src="{{ story.desc_image.url }}" class="article-image">
 {% endif %}
 {% endblock %}
 
 {% block article-text %}
-<h1>{{ story.title }}</h1>
+<!--<h2>{{ story.title }}</h2> -->
 <p>
   {% autoescape off %}
   {{ story.desc }}

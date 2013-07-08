@@ -70,8 +70,6 @@ textarea {
   resize: vertical;
 }
 
-/* ::Clearfixs and extends. Use which suits best */
-/* ----------------------------------------------------------- */
 .clearfix, .container, section {
   overflow: hidden;
   *zoom: 1;
@@ -119,7 +117,7 @@ a {
   text-decoration: none;
 }
 a:hover, a:focus, a:active {
-  color: #888888;
+  color: white;
 }
 
 h1 {
@@ -299,11 +297,16 @@ header h1 {
   padding-right: 1em;
   margin-top: -1em;
   margin-bottom: -1em;
+  min-width: 18em;
 }
 
 .icons a {
   font-family: "Socialico";
   font-size: 500%;
+}
+
+.content {
+  padding-right: 1em;
 }
 
 .article-text {
@@ -314,20 +317,28 @@ header h1 {
   min-height: 30em;
   background: url(../images/transparent.png);
 }
+@media only screen and ( max-width: 800px ) {
+  .article-text {
+    min-width: 100%;
+    float: none;
+    padding-right: 1em;
+    margin-bottom: 1em;
+  }
+}
 
 .article-text-inner {
   padding: 1em;
 }
 
-.article-image-container {
-  float: left;
-  width: 48%;
-}
-
 .article-image {
   height: 30em;
   width: auto;
-  min-width: 25em;
+}
+@media only screen and ( max-width: 800px ) {
+  .article-image {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .buttons {
@@ -337,25 +348,27 @@ header h1 {
 
 .button-block {
   float: left;
-  width: 30%;
-  min-width: 7.25em;
+  min-width: 5em;
   text-align: left;
-  margin-left: 1em;
-  margin-bottom: 1em;
-}
-
-.button-overlay {
-  background: url(../images/transparent.png);
+  margin-left: 1rem;
+  margin-bottom: 1rem;
   padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   vertical-align: middle;
-  display: inline-block;
-  height: 80px;
-  line-height: 80px;
   width: 100%;
+  background: #fff;
+}
+@media only screen and ( max-width: 800px ) {
+  .button-block {
+    min-width: 100%;
+  }
 }
 
-.button-block a {
-  font-size: 200%;
+.highlight {
+  border: solid #000 2px;
+  font-weight: bold;
+  background: #fff;
 }
 
 .blog-left {
@@ -396,6 +409,11 @@ header h1 {
   width: 40em;
   height: 30em;
 }
+@media only screen and ( max-width: 800px ) {
+  .gallery-slider {
+    width: 100%;
+  }
+}
 
 .slider-items {
   position: relative;
@@ -406,6 +424,12 @@ header h1 {
 .slider-item {
   width: 40em;
   float: left;
+}
+@media only screen and ( max-width: 800px ) {
+  .slider-item {
+    width: 800px;
+    height: auto;
+  }
 }
 
 .slider-overlay {
@@ -430,6 +454,12 @@ header h1 {
   height: 100%;
   width: auto;
 }
+@media only screen and ( max-width: 800px ) {
+  .slider-image {
+    width: 90%;
+    height: auto;
+  }
+}
 
 footer {
   padding-top: 1em;
@@ -437,7 +467,7 @@ footer {
   padding-left: 1em;
   padding-right: 1em;
   background: url(../images/transparent.png);
-  margin: 1em;
+  margin-top: 1em;
   text-align: right;
 }
 footer h1 {
@@ -466,23 +496,6 @@ ul {
   list-style-type: disc;
 }
 
-/* ::Media queries */
-/* ------------------------------------------------------------ */
-@media screen and (min-width: em-font(480px)) {
-  .container {
-    width: 95%;
-  }
-}
-@media screen and (min-width: em-font(800px)) {
-  .container {
-    min-width: 48.75em;
-  }
-}
-@media screen and (min-width: em-font(1240px)) {
-  .container {
-    max-width: 67.5em;
-  }
-}
 @media print {
   body {
     font-size: 62.5%;
@@ -491,38 +504,4 @@ ul {
 }
 @media screen and (max-width: 769px) {
   -webkit-text-size-adjust: none;
-}
-/* ::State styles */
-/* ------------------------------------------------------------ */
-.is-hidden {
-  display: none;
-}
-
-.is-shown, .is-block {
-  display: block;
-}
-
-.is-uppercase {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.is-lowercase {
-  text-transform: lowercase;
-}
-
-/* ::Debugs and #grid by Jon Gibbins */
-/* ----------------------------------------------------------- */
-#grid {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#grid div.horiz {
-  height: 8px;
-  border-bottom: 1px solid #ddd;
-  margin: 0;
-  padding: 0;
 }
