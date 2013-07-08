@@ -12,22 +12,22 @@ import random
 def get_button_width(buttons,add):
     button_width = 90
     if len(buttons)>0: button_width=90/(len(buttons)+add)
-    return button_width
+    return button_width-3
 
 def get_size(str,size):
-    if len(str)>9:
+    if len(str)>10:
         if (size>150): size=150
-    if len(str)>13:
+    if len(str)>15:
         size=130
     return size
 
 def calc_button_text_size(title, parent_title, buttons):
     size=150
-#    for button in buttons:
-#        size=get_size(button.title,size)
+    for button in buttons:
+        size=get_size(button.title,size)
 
-#    size=get_size(title,size)
-#    size=get_size(parent_title,size)
+    size=get_size(title,size)
+    size=get_size(parent_title,size)
     return size
 
 def random_button():
