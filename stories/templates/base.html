@@ -5,8 +5,10 @@
   </head>
   <body>
     <header>
-      <div style="width:30%; float:left; min-width: 12em;">
-        <h1><a href="/">Project Nightjar</a></h1>
+      <div class="nav-holder">
+	    <section class="buttons">
+          {% block breadcrumbs %}{% endblock %}
+        </section>
       </div>
       <section class="icons">
         <a href="http://www.flickr.com/photos/project_nightjar/">n</a>
@@ -19,21 +21,21 @@
 
     <section class="content">
 
-	<section class="buttons">
-      {% block buttons %}{% endblock %}
-    </section>
-
     <article>
       <section>
-        <section class="article-text">
-          <section class="article-text-inner">
-            {% block article-text %}{% endblock %}
+          <section class="article-text">
+            {% block article-title %}{% endblock %}
+            <section class="article-text-inner">
+              {% block article-text %}{% endblock %}
+            </section>
           </section>
-        </section>
-	    <section class="gallery">
-          {% block article-image %}{% endblock %}
-        </section>
+	      <section class="gallery">
+            {% block article-image %}{% endblock %}
+          </section>
       </section>
+            <section class="buttons">
+              {% block article-nav %}{% endblock %}
+            </section>
     </article>
 
     {% block blog %}{% endblock %}

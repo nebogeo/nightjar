@@ -283,17 +283,27 @@ input[type="checkbox"]:focus {
 }
 
 header {
-  padding-top: 2em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  background: url(../images/transparent.png);
+  padding-top: 1em;
+  overflow: hidden;
+  height: 5.5em;
 }
-header h1 {
-  color: #fff;
+
+.nav-holder {
+  width: 75%;
+  float: left;
+  min-width: 12em;
+  padding-bottom: 1em;
+}
+@media only screen and ( max-width: 800px ) {
+  .nav-holder {
+    width: 100%;
+    padding-right: 1em;
+  }
 }
 
 .icons {
-  float: right;
+  float: left;
+  padding-left: 1em;
   padding-right: 1em;
   margin-top: -1em;
   margin-bottom: -1em;
@@ -310,29 +320,35 @@ header h1 {
 }
 
 .article-text {
-  margin-left: 1em;
   float: left;
   width: 30%;
   min-width: 30em;
-  min-height: 30em;
-  background: url(../images/transparent.png);
 }
 @media only screen and ( max-width: 800px ) {
   .article-text {
     min-width: 100%;
     float: none;
-    padding-right: 1em;
     margin-bottom: 1em;
   }
 }
 
 .article-text-inner {
+  background: url(../images/transparent.png);
   padding: 1em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  min-height: 24em;
+}
+@media only screen and ( max-width: 800px ) {
+  .article-text-inner {
+    margin-bottom: 0;
+  }
 }
 
 .article-image {
   height: 30em;
   width: auto;
+  margin-bottom: 1em;
 }
 @media only screen and ( max-width: 800px ) {
   .article-image {
@@ -342,19 +358,18 @@ header h1 {
 }
 
 .buttons {
-  margin-top: 1em;
   width: 100%;
 }
 
 .button-block {
   float: left;
-  min-width: 5em;
+  min-width: 10em;
   text-align: left;
   margin-left: 1rem;
   margin-bottom: 1rem;
   padding-left: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   vertical-align: middle;
   width: 100%;
   background: #fff;
@@ -467,7 +482,6 @@ footer {
   padding-left: 1em;
   padding-right: 1em;
   background: url(../images/transparent.png);
-  margin-top: 1em;
   text-align: right;
 }
 footer h1 {

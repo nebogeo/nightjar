@@ -1,46 +1,20 @@
 {% extends "base.html" %}
 
-{% block buttons %}
+{% block breadcrumbs %}
 
-<div class="button-block"
-     style="background:{{ button.colour }};
-            width: 3rem;
-            min-width: 3rem;
-            font-size:{{ button_text_size }}%;
-            background: url(../media/images/{{ back_button }});">
-  <a href="/story/{{ parent.id_name }}"> < </a>
-</div>
-
-
-<!-- display title if not a leaf node -->
-{% if not leaf %}
-<div class="button-block highlight"
-     style="background:{{ button.colour }};
-            width: {{ button_width }}%;
-            font-size:{{ button_text_size }}%;
-            background: url(../media/images/{{ parent_button }});">
-  <a href="/story/{{ story.id_name }}"> {{ story.title }} </a>
-</div>
-{% else %}
+{% for button in crumbs %}
 <div class="button-block"
      style="background:{{ button.colour }};
             width: {{ button_width }}%;
-            font-size:{{ button_text_size }}%;
-            background: url(../media/images/{{ parent_button }});">
-  <a href="/story/{{ parent.id_name }}"> {{ parent.title }} </a>
-</div>
-{% endif %}
-
-{% for button in buttons %}
-<div class="button-block {% if button.id_name = story.id_name %} highlight {% endif %}"
-     style="background:{{ button.colour }};
-            width: {{ button_width }}%;
+            font-weight: {% if button.id_name = 'main' %} bold {% else %} 0 {% endif %};
             font-size:{{ button_text_size }}%;
             background: url(../media/images/{{ button.image }});">
-  <a href="/story/{{ button.id_name }}"> {{ button.title }} </a>
+  <a href="/story/{{ button.id_name }}"> {% if button.id_name = 'main' %} [{{ button.title }}] {% else %} {{ button.title }} {% endif %} </a>
 </div>
 {% endfor %}
+
 {% endblock %}
+
 
 {% block article-image %}
 
@@ -72,11 +46,30 @@
 {% endif %}
 {% endblock %}
 
+{% block article-title %}
+<div class="button-block" style="background:url('../media/images/button-01.png'); font-size:200%">
+  {{ story.title }}
+</div>
+{% endblock %}
+
 {% block article-text %}
-<!--<h2>{{ story.title }}</h2> -->
 <p>
   {% autoescape off %}
   {{ story.desc }}
   {% endautoescape %}
 </p>
+{% endblock %}
+
+{% block article-nav %}
+
+{% for button in buttons %}
+<div class="button-block"
+     style="background:{{ button.colour }};
+            width: {{ nav_button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ button.image }});">
+  <a href="/story/{{ button.id_name }}"> {{ button.title }} </a>
+</div>
+{% endfor %}
+
 {% endblock %}

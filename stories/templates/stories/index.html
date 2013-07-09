@@ -1,15 +1,18 @@
 {% extends "base.html" %}
 
-{% block buttons %}
-{% for button in buttons %}
+{% block breadcrumbs %}
+
+{% for button in crumbs %}
 <div class="button-block"
      style="background:{{ button.colour }};
             width: {{ button_width }}%;
+            font-weight: {% if button.id_name = 'main' %} bold {% else %} 0 {% endif %};
             font-size:{{ button_text_size }}%;
             background: url(../media/images/{{ button.image }});">
-    <a href="/story/{{ button.id_name }}">{{ button.title }}</a>
+  <a href="/story/{{ button.id_name }}"> {% if button.id_name = 'main' %} [{{ button.title }}] {% else %} {{ button.title }} {% endif %} </a>
 </div>
 {% endfor %}
+
 {% endblock %}
 
 {% block article-image %}
@@ -49,6 +52,21 @@
   {% endautoescape %}
 </p>
 {% endblock %}
+
+{% block article-nav %}
+
+{% for button in buttons %}
+<div class="button-block"
+     style="background:{{ button.colour }};
+            width: {{ nav_button_width }}%;
+            font-size:{{ button_text_size }}%;
+            background: url(../media/images/{{ button.image }});">
+  <a href="/story/{{ button.id_name }}"> {{ button.title }} </a>
+</div>
+{% endfor %}
+
+{% endblock %}
+
 
 {% block blog %}
 <section class="blog clearfix">

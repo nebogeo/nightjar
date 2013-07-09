@@ -47,15 +47,26 @@ a {
 // ---- nightjar stuff ---------------------------------------
 
 header {
-	@include padding-leader(4);
-	@include padding-trailer(2);
-    padding-left: 1em;
-	background: url(../images/transparent.png);
-	h1 { color: #fff; }
+    padding-top: 1em;
+    overflow: hidden;
+    height: 5.5em;
+}
+
+.nav-holder {
+    width: 75%;
+    float: left;
+    min-width: 12em;
+    padding-bottom: 1em;
+
+    @media only screen and ( max-width: 800px ) {
+          width: 100%;
+          padding-right: 1em;
+    }
 }
 
 .icons {
-    float: right;
+    float: left;
+    padding-left: 1em;
     padding-right: 1em;
     margin-top: -1em;
     margin-bottom: -1em;
@@ -74,30 +85,33 @@ header {
 ///////// stories
 
 .article-text {
-    margin-left: 1em;
     float: left;
     width: 30%;
-
     min-width: 30em;
 
     @media only screen and ( max-width: 800px ) {
         min-width: 100%;
         float: none;
-        padding-right: 1em;
         margin-bottom: 1em;
     }
-
-    min-height: 30em;
-	background: url(../images/transparent.png);
 }
 
 .article-text-inner {
+	background: url(../images/transparent.png);
     padding: 1em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    min-height: 24em;
+
+    @media only screen and ( max-width: 800px ) {
+        margin-bottom: 0;
+    }
 }
 
 .article-image {
     height: 30em;
     width: auto;
+    margin-bottom: 1em;
 
     @media only screen and ( max-width: 800px ) {
           width: 100%;
@@ -108,16 +122,14 @@ header {
 
 //////// buttons
 
-$button-width: 35%;
-
 .buttons {
-    margin-top: 1em;
+//    margin-top: 1em;
     width: 100%;
 }
 
 .button-block {
     float: left;
-    min-width: 5em;
+    min-width: 10em;
 
     @media only screen and ( max-width: 800px ) {
         min-width: 100%;
@@ -127,8 +139,8 @@ $button-width: 35%;
     margin-left: 1rem;
     margin-bottom: 1rem;
     padding-left: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     vertical-align: middle;
     width: 100%;
     background: #fff;
@@ -246,7 +258,6 @@ footer {
     padding-right: 1em;
     background: url(../images/transparent.png);
 	h1 { color: #fff; }
-    margin-top: 1em;
     text-align: right;
 }
 
