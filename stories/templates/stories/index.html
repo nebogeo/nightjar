@@ -39,9 +39,14 @@
   </div>
 </div>
 {% else %}
-<div class="article-image-container">
-  <img src="{{ story.desc_image.url }}" class="article-image">
+<div class="article-image-container" style="overflow: hidden;">
+  <img src="{{ story.desc_image.url }}" class="article-image" style="float:left; height:27em;">
+  <div style="float:left; margin-left:1em; overflow: hidden;">
+    <a class="twitter-timeline"  width="100" height="425" href="https://twitter.com/ProjectNightjar"  data-widget-id="348490372143525888">Tweets by @ProjectNightjar</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
 </div>
+
 {% endif %}
 {% endblock %}
 
@@ -65,26 +70,4 @@
 </div>
 {% endfor %}
 
-{% endblock %}
-
-
-{% block blog %}
-<section class="blog clearfix">
-  <section class="blog-right">
-    <a class="twitter-timeline"  href="https://twitter.com/ProjectNightjar"  data-widget-id="348490372143525888">Tweets by @ProjectNightjar</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-  </section>
-  <section class="blog-left">
-    <h2>Nightjar News</h2>
-
-    {% for post in posts %}
-    <p>
-      <a href="/post/{{ post.pk }}">
-        {{ post.title }}
-      </a> by {{ post.author }} <br/>
-      {{ post.date }}
-    </p>
-    {% endfor %}
-  </section>
-</section>
 {% endblock %}
