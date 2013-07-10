@@ -21,8 +21,12 @@
 
     <section class="content">
 
-    <article>
-      <section>
+      <section class="buttons">
+        {% block article-nav %}{% endblock %}
+      </section>
+
+      <article>
+        <section>
           <section class="article-text">
             {% block article-title %}{% endblock %}
             <section class="article-text-inner">
@@ -32,13 +36,10 @@
 	      <section class="gallery">
             {% block article-image %}{% endblock %}
           </section>
-      </section>
-            <section class="buttons">
-              {% block article-nav %}{% endblock %}
-            </section>
-    </article>
+        </section>
+      </article>
 
-    {% block blog %}{% endblock %}
+      {% block blog %}{% endblock %}
 
     </section>
 
