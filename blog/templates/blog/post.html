@@ -1,12 +1,38 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block breadcrumbs %}
+<div class="button-block"
+     style="width: 40%;
+            font-weight: bold;
+            font-size: 150%;
+            background: url(../media/images/button-09.png);">
+  <a href="/story/main"> [Project Nightjar]</a>
+</div>
+<div class="button-block"
+     style="width: 40%;
+            font-size: 150%;
+            background: url(../media/images/button-04.png);">
+  <a href="/blog">News from the field</a>
+</div>
+{% endblock %}
 
-<h1><a href="/">NightJar News</a></h1>
+{% block article-image %}
+{% if post.image %}
+<img src="{{ post.image.url }}" class="slider-image">
+{% endif %}
+{% endblock %}
 
-<a href="/blog/"><h2>{{ post.title }}</h2></a> <br/>
-by {{ post.author }} on {{ post.date }}
+{% block article-title %}
+<div class="button-block" style="background:url('../media/images/transparent.png'); font-size:200%">
+  <a href="/post/{{ post.id }}"> {{ post.title }} </a>
+</div>
+{% endblock %}
 
-<p>{{ post.text }}</p>
-
+{% block article-text %}
+<section class="article-text-inner"> <p>
+  <p><b> by <a href="/stories/{{ post.author }}">{{ post.author }}</a> at {{ post.date }} </b></p>
+  {% autoescape off %}
+  {{ post.text }}
+  {% endautoescape %}
+</p> </section>
 {% endblock %}

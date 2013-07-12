@@ -15,17 +15,17 @@
 
 {% endblock %}
 
-
 {% block article-image %}
-
-<!--
--->
-{% if gallery %}
-<div class="gallery-slider">
   <div class="slider-items">
     {% for image in gallery %}
     <div class="slider-item">
+      {% if image.image %}
       <img src="{{ image.image.url }}" class="slider-image">
+      {% else %}
+      {% autoescape off %}
+      {{ image.embed }}
+      {% endautoescape %}
+      {% endif %}
       {% if image.desc %}
       {% autoescape off %}
       <div class="slider-caption">{{ image.desc }}</div>
@@ -40,10 +40,6 @@
     <img class="arrow-left" src="../media/images/arrow-left-t.png">
     <img class="arrow-right" src="../media/images/arrow-right-t.png" style="float: right; margin-right: 3em;">
   </div>
-</div>
-{% else %}
-<img src="{{ story.desc_image.url }}" class="article-image">
-{% endif %}
 {% endblock %}
 
 {% block article-title %}
@@ -53,23 +49,20 @@
 {% endblock %}
 
 {% block article-text %}
-<p>
+<section class="article-text-inner"> <p>
   {% autoescape off %}
   {{ story.desc }}
   {% endautoescape %}
-</p>
+</p> </section>
 {% endblock %}
 
 {% block article-nav %}
-
 {% for button in buttons %}
 <div class="button-block"
-     style="background:{{ button.colour }};
-            width: {{ nav_button_width }}%;
+     style="width: {{ nav_button_width }}%;
             font-size:{{ button_text_size }}%;
             background: url(../media/images/{{ button.image }});">
   <a href="/story/{{ button.id_name }}"> {{ button.title }} </a>
 </div>
 {% endfor %}
-
 {% endblock %}

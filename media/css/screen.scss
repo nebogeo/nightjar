@@ -20,7 +20,7 @@
 }
 
 html {
-	font-size: 100%;
+	font-size: 1        00%;
 }
 
 body {
@@ -50,7 +50,7 @@ header {
     padding-top: 1em;
     overflow: hidden;
     height: 5.5em;
-}
+    }
 
 .nav-holder {
     width: 75%;
@@ -86,8 +86,11 @@ header {
 
 .article-text {
     float: left;
-    width: 30%;
-    min-width: 30em;
+    width: 50%;
+    min-width: 20em;
+//    max-width: 30em;
+    white-space: normal;
+    overflow: text;
 
     @media only screen and ( max-width: 800px ) {
         min-width: 100%;
@@ -155,53 +158,46 @@ header {
 
 /////// blog
 
-.blog {
+.blog-container {
+    width: 100%;
+
+    @media only screen and ( max-width: 800px ) {
+        margin-top: 1em;
+    }
 }
 
-.blog-left {
-    min-width: 10em;
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    padding: 1em;
-    background: url(../images/transparent.png);
-    width: auto;
-    overflow: hidden;
-}
-
-.blog-right {
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    float: right;
-    width: 30em;
-}
 
 ////// gallery
 
 .gallery {
-    padding-left: 1em;
-}
+    margin-left: 1em;
+    margin-bottom: 1em;
 
-.gallery-block {
-    width: 31%;
-    min-width: 16em;
-	background: url(../images/transparent.png);
-}
-
-.gallery-image {
-    width: 100%;
-}
-
-.gallery-slider {
-    overflow: hidden;
-    width: 40em;
-    height: 30em;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    min-width: 30em;
 
     @media only screen and ( max-width: 800px ) {
           width: 100%;
     }
+}
 
+.gallery-dummy {
+    padding-top: 75%; /* 4:3 aspect ratio */
+}
+
+.gallery-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+//    width: 40em;
+//    height: 30em;
+//    width: 100%;
+//    height: auto;
 }
 
 .slider-items {
@@ -211,20 +207,14 @@ header {
 }
 
 .slider-item {
-    width: 40em;
+    width: 5%;
     float: left;
-
-    @media only screen and ( max-width: 800px ) {
-          width: 800px;
-          height: auto;
-    }
 }
 
 .slider-overlay {
     position: relative;
-    top: -21.5em;
+    top: -72%;
     left: 1em;
-    color: #fff;
 }
 
 .slider-caption {
@@ -241,11 +231,10 @@ header {
 .slider-image {
     height: 100%;
     width: auto;
+}
 
-    @media only screen and ( max-width: 800px ) {
-          width: 90%;
-          height: auto;
-    }
+.arrow-left .arrow-right {
+    z-index: 999;
 }
 
 // --------------------------------------------------------------

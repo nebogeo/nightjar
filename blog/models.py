@@ -7,15 +7,9 @@ class Post(models.Model):
     text = models.TextField()
     date = models.DateTimeField('date published')
     author = models.ForeignKey(User)
+    image = models.ImageField(blank=True, null=True, upload_to="blog_images")
     def __unicode__(self):
         return self.title;
-
-# multiple images per blog post
-class PostImage(models.Model):
-    post = models.ForeignKey(Post)
-    image = models.ImageField(upload_to="blog_images")
-    def __unicode__(self):
-        return self.image;
 
 # categories
 class Category(models.Model):

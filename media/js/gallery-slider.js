@@ -20,7 +20,9 @@ jQuery(document).ready(function($)
     var current_pos=0;
     var last_x=0;
     var auto_scroll=true;
+    var disabled=false;
 
+    // set up the arrow buttons
     $(".arrow-left").click(function() { auto_scroll=false; scroll_left(); });
     $(".arrow-right").click(function() { auto_scroll=false; scroll_right(); });
 
@@ -38,11 +40,29 @@ jQuery(document).ready(function($)
 
     $(".arrow-left").hide();
 
+    // assume we have one image!
+    var image_width = $(".slider-image").first().innerWidth();
+
+    // get the positions of all the images
     $(".slider-items").children().each(function(t,v) {
+        // need to set the width here, can't do it automatically
+        // todo: update this all the time
+        $(this).width(image_width);
         current_pos+=v.clientWidth;
         image_positions.push(-current_pos);
     });
 
+//    $(".slider-items").width($(window).width()*(image_positions.length+1));
+
+
+    // only one image, disable everything
+    if (image_positions.length==2) {
+        disabled=true;
+        $(".arrow-left").hide();
+        $(".arrow-right").hide();
+    }
+
+    // deal with the dragging
     var up = function(event) {
         auto_scroll=false;
         last_x=event.clientX;
@@ -61,12 +81,14 @@ jQuery(document).ready(function($)
     });
 
     $('.slider-items').bind('drag',function(event){
-        var cur = parseInt($(this).css("left"), 10);
-        var pos = cur+(event.clientX-last_x);
-        $(this).css({
-            left: pos
-        });
-        last_x = event.clientX;
+        if (!disabled) {
+            var cur = parseInt($(this).css("left"), 10);
+            var pos = cur+(event.clientX-last_x);
+            $(this).css({
+                left: pos
+            });
+            last_x = event.clientX;
+        }
     });
 
     var current_image=0;

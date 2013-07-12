@@ -59,10 +59,12 @@ def index(request):
     template = loader.get_template('stories/index.html')
     buttons = Story.objects.filter(parent_id_name='main')
     posts = Post.objects.all().order_by('-date')[:5]
+    gallery = GalleryImage.objects.filter(story__id_name='main')
 
     crumbs = [s]
     calc_button_colours(crumbs)
     calc_button_colours(buttons)
+    calc_button_colours(posts)
 
     context = Context({
         'story': s,
@@ -71,11 +73,11 @@ def index(request):
         'button_width': get_button_width(crumbs,0),
         'nav_button_width': get_button_width(buttons,0),
         'button_text_size': calc_button_text_size("","",buttons),
+        'gallery': gallery,
         'posts': posts,
         'leaf' : False
     })
     return HttpResponse(template.render(context))
-
 
 def story(request, story):
     s = get_object_or_404(Story, id_name=story)

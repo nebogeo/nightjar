@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block breadcrumbs %}
+<div class="button-block"
+     style="width: 100%;
+            font-weight: bold;
+            font-size: 150%;
+            background: url(../media/images/button-09.png);">
+  <a href="/story/main"> [Project Nightjar Blog]</a>
+</div>
+{% endblock %}
 
-<h1><a href="/">NightJar News</a></h1>
-
+{% block article-nav %}
 {% for post in posts %}
-    <p>
-    <a href="/post/{{ post.pk }}">
-      {{ post.title }}
-    </a> by {{ post.author }} <br/>
-    {{ post.date }}
-    </p>
+<div class="button-block"
+     style="width: 50%;
+            font-size: 150%;
+            background: url(../media/images/{{ post.image }});">
+  <a href="/post/{{ post.id }}"> {{ post.title }} by by {{ post.author }} at {{ post.date }}</a>
+</div>
 {% endfor %}
-
 {% endblock %}

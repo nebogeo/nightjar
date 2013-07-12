@@ -21,27 +21,28 @@
     </header>
 
     <section class="content">
-
       <section class="buttons">
         {% block article-nav %}{% endblock %}
       </section>
 
-      <article>
+      <article style="white-space: nowrap; overflow: hidden;">
         <section>
           <section class="article-text">
             {% block article-title %}{% endblock %}
-            <section class="article-text-inner">
-              {% block article-text %}{% endblock %}
-            </section>
+            {% block article-text %}{% endblock %}
           </section>
 	      <section class="gallery">
-            {% block article-image %}{% endblock %}
+            <div class="gallery-dummy"></div>
+            <div class="gallery-slider">
+              {% block article-image %}{% endblock %}
+            </div>
           </section>
         </section>
       </article>
 
-      {% block blog %}{% endblock %}
-
+      <section class="blog">
+        {% block blog %}{% endblock %}
+      </section>
     </section>
 
     <footer>
