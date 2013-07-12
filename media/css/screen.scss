@@ -212,9 +212,14 @@ header {
 }
 
 .slider-overlay {
-    position: relative;
-    top: -72%;
-    left: 1em;
+//    position: relative;
+//    top: -72%;
+//    left: 1em;
+
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
 }
 
 .slider-caption {
@@ -233,8 +238,16 @@ header {
     width: auto;
 }
 
-.arrow-left .arrow-right {
+.arrow-left {
+    float: left;
+    margin-left: 2em;
     z-index: 999;
+}
+
+.arrow-right {
+    z-index: 999;
+    float: right;
+    margin-right: 2em;
 }
 
 // --------------------------------------------------------------
