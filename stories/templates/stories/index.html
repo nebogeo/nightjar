@@ -57,7 +57,8 @@
        style="width: 100%;
               font-size:{{ button_text_size }}%;
               background: url(../media/images/{{ post.image }});">
-    <a href="/post/{{ post.id }}"> {{ post.title }} </a> at {{ post.date }} by {{ post.author }}
+    <a href="/post/{{ post.id }}"> {{ post.title }} </a>
+    <span style="font-size:75%;">on {{ post.date }} by {{ post.author }}</span>
   </div>
   {% endfor %}
 
