@@ -334,10 +334,6 @@ header {
   }
 }
 
-.article-text a {
-  color: #730;
-}
-
 .article-text-inner {
   background: url(../images/transparent.png);
   padding: 1em;
@@ -349,6 +345,10 @@ header {
   .article-text-inner {
     margin-bottom: 0;
   }
+}
+
+.article-text-inner a {
+  color: #730;
 }
 
 .article-image {
