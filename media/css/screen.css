@@ -432,7 +432,7 @@ header {
 .slider-items {
   position: relative;
   cursor: move;
-  width: 6000px;
+  width: 12000px;
 }
 
 .slider-item {
