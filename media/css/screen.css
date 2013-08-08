@@ -476,6 +476,10 @@ header {
   margin-right: 2em;
 }
 
+#cu, #exeter, #bbsrc {
+  padding-left: 3em;
+}
+
 footer {
   padding-top: 1em;
   padding-bottom: 1em;

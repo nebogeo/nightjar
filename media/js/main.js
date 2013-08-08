@@ -18,4 +18,10 @@ jQuery(document).ready(function($)
         $(this).attr("src", "../media/images/sensory-ecology.png");
     });
 
+    $("#cu").hover(function () {
+        $(this).attr("src", "../media/images/cu-l.png");
+    }, function () {
+        $(this).attr("src", "../media/images/cu.png");
+    });
+
 });
