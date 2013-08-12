@@ -43,17 +43,31 @@ jQuery(document).ready(function($)
     // assume we have one image!
     var image_width = $(".slider-image").first().innerWidth();
 
-    // get the positions of all the images
-    $(".slider-items").children().each(function(t,v) {
-        // need to set the width here, can't do it automatically
-        // todo: update this all the time
-        $(this).width(image_width);
-        current_pos+=v.clientWidth;
-        image_positions.push(-current_pos);
-    });
+    alert(image_width);
 
-//    $(".slider-items").width($(window).width()*(image_positions.length+1));
+    var reset_sizes = function() {
+        image_width = $(".slider-image").first().innerWidth();
+        image_positions = [0];
+        current_pos=0;
 
+        // get the positions of all the images
+        $(".slider-items").children().each(function(t,v) {
+            // need to set the width here, can't do it automatically
+            // todo: update this all the time
+            $(this).width(image_width);
+            $(this).css({left:current_pos});
+            current_pos+=v.clientWidth;
+            image_positions.push(-current_pos);
+        });
+
+        $('.slider-items').css({
+            left: ""+image_positions[current_image]+"px", top: "0px"
+        });
+
+    };
+
+    reset_sizes();
+    $(window).resize(reset_sizes);
 
     // only one image, disable everything
     if (image_positions.length==2) {
