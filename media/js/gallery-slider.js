@@ -43,8 +43,6 @@ jQuery(document).ready(function($)
     // assume we have one image!
     var image_width = $(".slider-image").first().innerWidth();
 
-    alert(image_width);
-
     var reset_sizes = function() {
         image_width = $(".slider-image").first().innerWidth();
         image_positions = [0];
