@@ -480,6 +480,11 @@ header {
   padding-left: 3em;
 }
 
+.twitter {
+  padding-left: 1em;
+  margin-bottom: 1em;
+}
+
 footer {
   padding-top: 1em;
   padding-bottom: 1em;
