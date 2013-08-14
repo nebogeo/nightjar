@@ -40,12 +40,12 @@ jQuery(document).ready(function($)
 
     $(".arrow-left").hide();
 
-    var image_width = $(".slider-image").innerWidth();
+    var image_width = $(".gallery").innerWidth();
 
     console.log("width="+image_width);
 
     var reset_sizes = function() {
-        image_width = $(".slider-image").first().innerWidth();
+        image_width = $(".gallery").innerWidth();
         image_positions = [0];
         current_pos=0;
 
