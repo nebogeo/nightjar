@@ -40,8 +40,7 @@ jQuery(document).ready(function($)
 
     $(".arrow-left").hide();
 
-    // assume we have one image!
-    var image_width = $(".slider-image").first().innerWidth();
+    var image_width = $(".slider-image").innerWidth();
 
     var reset_sizes = function() {
         image_width = $(".slider-image").first().innerWidth();
