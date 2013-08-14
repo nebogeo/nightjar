@@ -42,6 +42,8 @@ jQuery(document).ready(function($)
 
     var image_width = $(".slider-image").innerWidth();
 
+    console.log("width="+image_width);
+
     var reset_sizes = function() {
         image_width = $(".slider-image").first().innerWidth();
         image_positions = [0];
