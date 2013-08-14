@@ -40,12 +40,12 @@ jQuery(document).ready(function($)
 
     $(".arrow-left").hide();
 
-    var image_width = $(".gallery").innerWidth();
+    var image_height = $(".gallery").innerHeight();
 
-    console.log("width="+image_width);
+    console.log("height="+image_height);
 
     var reset_sizes = function() {
-        image_width = $(".gallery").innerWidth();
+        image_height = $(".gallery").innerHeight();
         image_positions = [0];
         current_pos=0;
 
@@ -53,7 +53,7 @@ jQuery(document).ready(function($)
         $(".slider-items").children().each(function(t,v) {
             // need to set the width here, can't do it automatically
             // todo: update this all the time
-            $(this).width(image_width);
+            $(this).height(image_height);
             $(this).css({left:current_pos});
             current_pos+=v.clientWidth;
             image_positions.push(-current_pos);
