@@ -91,7 +91,7 @@ textarea {
 
 @font-face {
   font-family: 'Socialico';
-  src: url("../fonts/Socialico.otf");
+  src: url("../fonts/Socialico-i.ttf");
 }
 
 html {
@@ -417,7 +417,7 @@ header {
 
 .gallery-dummy {
   padding-top: 75%;
-  /* 4:3 aspect ratio */
+  /*        4:3 aspect ratio */
 }
 
 .gallery-slider {
