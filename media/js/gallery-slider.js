@@ -47,6 +47,7 @@ jQuery(document).ready(function($)
     console.log("width="+image_width);
 
     var reset_sizes = function() {
+        image_width = $(".gallery").innerWidth();
         image_height = $(".gallery").innerHeight();
         image_positions = [0];
         current_pos=0;
@@ -57,8 +58,8 @@ jQuery(document).ready(function($)
             // todo: update this all the time
             $(this).height(image_height);
             $(this).css({left:current_pos});
-            current_pos+=v.clientWidth;
-            console.log(v.clientWidth);
+            current_pos+=image_width;
+//            console.log(v.clientWidth);
             image_positions.push(-current_pos);
         });
 
