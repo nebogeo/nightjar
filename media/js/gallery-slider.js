@@ -48,7 +48,7 @@ jQuery(document).ready(function($)
 
     var reset_sizes = function() {
         image_height = $(".gallery").innerHeight();
-        image_width = image_height*1.25;
+        image_width = image_height*1.24;
         image_positions = [0];
         current_pos=0;
 
