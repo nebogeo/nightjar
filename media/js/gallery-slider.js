@@ -48,7 +48,7 @@ jQuery(document).ready(function($)
 
     var reset_sizes = function() {
         image_height = $(".gallery").innerHeight();
-        image_width = image_height;
+        image_width = image_height*1.3;
         image_positions = [0];
         current_pos=0;
 
@@ -57,6 +57,7 @@ jQuery(document).ready(function($)
             // need to set the width here, can't do it automatically
             // todo: update this all the time
             $(this).height(image_height);
+            $(this).width(image_width);
             $(this).css({left:current_pos});
             current_pos+=image_width;
             console.log(v.clientWidth);
