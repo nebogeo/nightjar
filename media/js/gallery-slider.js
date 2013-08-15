@@ -57,7 +57,7 @@ jQuery(document).ready(function($)
             // need to set the width here, can't do it automatically
             // todo: update this all the time
             $(this).height(image_height);
-            $(this).width(image_width);
+//            $(this).width(image_width);
             $(this).css({left:current_pos});
             current_pos+=image_width;
             console.log(v.clientWidth);
