@@ -40,12 +40,13 @@ jQuery(document).ready(function($)
 
     $(".arrow-left").hide();
 
+    var image_width = $(".gallery").innerWidth();
     var image_height = $(".gallery").innerHeight();
 
     console.log("height="+image_height);
 
     var reset_sizes = function() {
-        image_height = $(".gallery").innerHeight();
+//        image_height = $(".gallery").innerHeight();
         image_positions = [0];
         current_pos=0;
 
@@ -55,7 +56,7 @@ jQuery(document).ready(function($)
             // todo: update this all the time
             $(this).height(image_height);
             $(this).css({left:current_pos});
-            current_pos+=v.clientWidth;
+            current_pos+=image_width;
             image_positions.push(-current_pos);
         });
 
