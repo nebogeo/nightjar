@@ -369,13 +369,14 @@ header {
 
 .button-block {
   float: left;
-  min-width: 12em;
   text-align: left;
   margin-left: 1rem;
   margin-bottom: 1rem;
   padding-left: 1em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  max-height: 2.5em;
+  overflow: hidden;
   vertical-align: middle;
   width: 100%;
   background: #fff;
@@ -384,6 +385,10 @@ header {
   .button-block {
     min-width: 100%;
   }
+}
+
+.button-block a {
+  white-space: nowrap;
 }
 
 .highlight {
