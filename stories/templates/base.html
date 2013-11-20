@@ -28,15 +28,26 @@
 
       <article style="white-space: nowrap; overflow: hidden;">
         <section>
+          {% if not game %}
           <section class="article-text">
             {% block article-title %}{% endblock %}
             {% block article-text %}{% endblock %}
           </section>
+          {% endif %}
+
+          {% if game %}
+	      <section class="game">
+          {% else %}
 	      <section class="gallery">
+          {% endif %}
+          {% if not game %}
             <div class="gallery-dummy"></div>
             <div class="gallery-slider">
+          {% endif %}
               {% block article-image %}{% endblock %}
+          {% if not game %}
             </div>
+          {% endif %}
           </section>
 
 	      <section class="twitter">

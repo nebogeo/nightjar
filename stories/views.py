@@ -99,6 +99,10 @@ def story(request, story):
     calc_button_colours(crumbs)
     calc_button_colours(buttons)
 
+    game = False
+    if story.endswith("_game"):
+        game = True
+
     context = Context({
         'story': s,
         'buttons': buttons,
@@ -109,6 +113,7 @@ def story(request, story):
         'gallery': gallery,
         'parent': parent,
         'parent_button': random_button(),
-        'back_button': random_button()
+        'back_button': random_button(),
+        'game': game
     })
     return HttpResponse(template.render(context))
